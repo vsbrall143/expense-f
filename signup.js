@@ -1,7 +1,7 @@
 // require('dotenv').config(); // Load environment variables from .env file
 
 async function signupForm(event) {
-    require('dotenv').config(); // Load environment variables from .env file
+ 
     event.preventDefault();
     console.log("Form submission started");
 
