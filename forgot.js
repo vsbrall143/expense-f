@@ -1,8 +1,8 @@
-// document.getElementById('forgotForm').addEventListener('submit', forgot);
+3306// document.getElementById('forgotForm').addEventListener('submit', forgot);
 
 function forgot() {
     event.preventDefault(); // Prevent default form submission behavior
-    console.log("hldjflksdjkfkl")
+    console.log("forgot function called in frontend")
     const email = document.getElementById('forgot_email').value;
 
     if (!email) {
@@ -33,7 +33,7 @@ function reset() {
         })
         .catch(error => {
             console.error("Error:", error);
-            alert("An error occurred while processing your requesttttttttttttttt.");
+            alert("An error occurred while processing your requesttt.");
         });
 }
 
