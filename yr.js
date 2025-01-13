@@ -43,7 +43,7 @@ function populateTable(data) {
     yearElement.textContent = year;
     try {
       const response = await axios.get(
-        `http://localhost:3000/user/get-expenses/${year}`, // Use the year in the endpoint
+        `https://expense-tracker-2o39.onrender.com/user/get-expenses/${year}`, // Use the year in the endpoint
         {
           headers: { Authorization: token },
         }

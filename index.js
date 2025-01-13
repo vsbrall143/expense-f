@@ -68,7 +68,7 @@ form.addEventListener("submit", function (event) {
 
   const token = localStorage.getItem("token");
   axios
-    .post("http://localhost:3000/user/add-user", userDetails, {
+    .post("https://expense-tracker-2o39.onrender.com/user/add-user", userDetails, {
       headers: { Authorization: token },
     })
     .then((res) => {
@@ -159,7 +159,7 @@ async function loadPage(month, year, page) {
   const rows = localStorage.getItem("rows");
   try {
     const response = await axios.get(
-      `http://localhost:3000/user/get-expenses/${month}/${year}/${rows}?page=${page}`,
+      `https://expense-tracker-2o39.onrender.com/user/get-expenses/${month}/${year}/${rows}?page=${page}`,
       {
         headers: { Authorization: token },
       }
@@ -234,7 +234,7 @@ async function deleteItem(user, listItem) {
     const token = localStorage.getItem("token");
     const id = user.id;
     const response = await axios.delete(
-      `http://localhost:3000/user/delete-expenses/${id}`,
+      `https://expense-tracker-2o39.onrender.com/user/delete-expenses/${id}`,
       {
         headers: { Authorization: token },
       }
@@ -275,7 +275,7 @@ const y = year;
 
 //   try {
 //     const response = await axios.get(
-//       `http://localhost:3000/user/get-expenses/${year}`,
+//       `https://expense-tracker-2o39.onrender.com/user/get-expenses/${year}`,
 //       { headers: { Authorization: token } }
 //     );
 //     const YearList = document.getElementById("year-list");
@@ -340,7 +340,7 @@ async function handleDateChange() {
   try {
     const token = localStorage.getItem("token");
     const response = await axios.get(
-      `http://localhost:3000/user/get-expense/${day}/${month}/${year}`,
+      `https://expense-tracker-2o39.onrender.com/user/get-expense/${day}/${month}/${year}`,
       { headers: { Authorization: token } }
     );
 
@@ -468,7 +468,7 @@ document.getElementById("rzp-button1").onclick = async function (e) {
     const token = localStorage.getItem("token");
     console.log(token);
     const response = await axios.get(
-      `http://localhost:3000/purchase/premiummembership`,
+      `https://expense-tracker-2o39.onrender.com/purchase/premiummembership`,
       { headers: { Authorization: token } }
     );
 
@@ -480,7 +480,7 @@ document.getElementById("rzp-button1").onclick = async function (e) {
       handler: async function (response) {
         try {
           const res = await axios.post(
-            `http://localhost:3000/purchase/updatetransactionstatus`,
+            `https://expense-tracker-2o39.onrender.com/purchase/updatetransactionstatus`,
             {
               order_id: options.order_id,
               payment_id: response.razorpay_payment_id,
@@ -514,7 +514,7 @@ document.getElementById("rzp-button1").onclick = async function (e) {
 
 async function isPremium() {
   const token = localStorage.getItem("token");
-  const response = await axios.get(`http://localhost:3000/purchase/isPremium`, {
+  const response = await axios.get(`https://expense-tracker-2o39.onrender.com/purchase/isPremium`, {
     headers: { Authorization: token },
   });
 
@@ -549,7 +549,7 @@ async function leaderboard() {
 
   if (decodedToken.isPremium == true) {
     const response = await axios.get(
-      `http://localhost:3000/purchase/leaderboard`,
+      `https://expense-tracker-2o39.onrender.com/purchase/leaderboard`,
       { headers: { Authorization: token } }
     );
 
@@ -601,7 +601,7 @@ async function handleDownload() {
   try {
     // Notify the user that the download is starting
     $.notify("Download started! Preparing your file...", "info");
-    const response = await axios.get(`http://localhost:3000/download`, {
+    const response = await axios.get(`https://expense-tracker-2o39.onrender.com/download`, {
       headers: { Authorization: token },
     });
 
@@ -639,7 +639,7 @@ async function displayDownloads() {
   if (decodedToken.isPremium == true) {
     try {
       // Make a GET request to the '/get-download' route
-      const response = await axios.get("http://localhost:3000/get-downloads", {
+      const response = await axios.get("https://expense-tracker-2o39.onrender.com/get-downloads", {
         headers: { Authorization: token },
       });
 

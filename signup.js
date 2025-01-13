@@ -12,7 +12,7 @@ async function signupForm(event) {
     };
 
     try {
-        const res = await axios.post(`http://localhost:3000/user/signup`, userDetails);
+        const res = await axios.post(`https://expense-tracker-2o39.onrender.com/user/signup`, userDetails);
         console.log(res);
         alert("Signup successful!");
     } catch (error) {
@@ -41,7 +41,7 @@ async function loginForm(event) {
     };
 
     try {
-        const res = await axios.post(`http://localhost:3000/user/login`, loginDetails);
+        const res = await axios.post(`https://expense-tracker-2o39.onrender.com/user/login`, loginDetails);
         console.log(res);
         localStorage.setItem('token',res.data.token);
         window.location.href = "daily.html";
