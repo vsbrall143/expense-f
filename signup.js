@@ -15,6 +15,7 @@ async function signupForm(event) {
         const res = await axios.post(`https://expense-tracker-2o39.onrender.com/user/signup`, userDetails);
         console.log(res);
         alert("Signup successful!");
+      window.location.href = "daily.html";
     } catch (error) {
         if (error.response && error.response.data) {
             // Display the error message from the server
